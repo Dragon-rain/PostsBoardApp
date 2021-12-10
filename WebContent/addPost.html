@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Post</title>
+<link rel='stylesheet' type='text/css' href='css/main.css'>
+</head>
+<body>
+	<div>
+		<a href='/ProjectTest1'> Main page </a>
+		<a href='/ProjectTest1/posts'> Posts Board </a>
+	</div>
+	<form method="post">
+		<div>
+			<label>Title:</label><br/>
+			<input name="title" placeholder="title" required="required"/>
+		</div>
+		<div>
+			<label>Description:</label><br/>
+			<textarea name="description" placeholder="description" required="required"></textarea>
+		</div>
+		<input name="success" value="true" hidden="true"/>
+		<button type="submit" >add</button>
+	</form>
+</body>
+</html>
