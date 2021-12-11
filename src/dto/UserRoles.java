@@ -6,7 +6,7 @@ public enum UserRoles {
 	private UserRoles() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	UserRoles(String role) {
 	}
 }

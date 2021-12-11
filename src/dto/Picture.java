@@ -1,21 +1,26 @@
 package dto;
 
-public class Picture extends BaseEntity{
-	
+public class Picture extends BaseEntity {
+
 	private int postId;
 	private String url;
+
 	public int getPostId() {
 		return postId;
 	}
+
 	public void setPostId(int postId) {
 		this.postId = postId;
 	}
+
 	public String getUrl() {
 		return url;
 	}
+
 	public void setUrl(String url) {
 		this.url = url;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -24,6 +29,7 @@ public class Picture extends BaseEntity{
 		result = prime * result + ((url == null) ? 0 : url.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -42,11 +48,10 @@ public class Picture extends BaseEntity{
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "picture [postId=" + postId + ", url=" + url + "]";
 	}
-	
-	
 
 }

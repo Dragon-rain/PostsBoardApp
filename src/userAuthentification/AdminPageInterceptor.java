@@ -10,11 +10,11 @@ import dto.User;
 import dto.UserRoles;
 
 public class AdminPageInterceptor {
-	
+
 	public void withAdminAuthFilter(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		User admin = (User) session.getAttribute("user");
-		if(!admin.getRole().equals(UserRoles.ADMIN.name())) {
+		if (!admin.getRole().equals(UserRoles.ADMIN.name())) {
 			try {
 				response.sendRedirect("/ProjectTest1/posts");
 			} catch (IOException e) {

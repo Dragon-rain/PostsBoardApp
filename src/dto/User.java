@@ -1,23 +1,26 @@
 package dto;
 
-public class User extends BaseEntity{
-	
+public class User extends BaseEntity {
+
 	private String username;
 	private String role;
-	
-	
+
 	public String getUsername() {
 		return username;
 	}
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 	public String getRole() {
 		return role;
 	}
+
 	public void setRole(String role) {
 		this.role = role;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -26,6 +29,7 @@ public class User extends BaseEntity{
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -44,9 +48,10 @@ public class User extends BaseEntity{
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", role=" + role + "]";
 	}
-	
+
 }

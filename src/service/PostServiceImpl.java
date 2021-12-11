@@ -6,9 +6,9 @@ import dto.Post;
 import repository.PostRepository;
 
 public class PostServiceImpl implements PostService {
-	
+
 	private PostRepository repository;
-	
+
 	public PostServiceImpl() {
 		repository = PostRepository.getInstance();
 	}
@@ -37,8 +37,7 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public void deletePostById(int id) {
 		repository.deletePostById(id);
-		
+
 	}
-	
 
 }

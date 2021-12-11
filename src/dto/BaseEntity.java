@@ -8,30 +8,39 @@ public abstract class BaseEntity {
 	private Date created;
 	private Date updated;
 	private Date deleted;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public Date getCreated() {
 		return created;
 	}
+
 	public void setCreated(Date created) {
 		this.created = created;
 	}
+
 	public Date getUpdated() {
 		return updated;
 	}
+
 	public void setUpdated(Date updated) {
 		this.updated = updated;
 	}
+
 	public Date getDeletedDate() {
 		return deleted;
 	}
+
 	public void setDeletedDate(Date deleted) {
 		this.deleted = deleted;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -42,6 +51,7 @@ public abstract class BaseEntity {
 		result = prime * result + ((updated == null) ? 0 : updated.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -70,11 +80,10 @@ public abstract class BaseEntity {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "BaseEntity [id=" + id + ", created=" + created + ", updated=" + updated + ", deleted=" + deleted + "]";
 	}
 
-	
-	
 }

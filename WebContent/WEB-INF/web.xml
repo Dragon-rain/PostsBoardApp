@@ -60,6 +60,7 @@
     <servlet-name>registration</servlet-name>
     <url-pattern>/registration</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>logout</servlet-name>
     <servlet-class>pages.LogoutServlet</servlet-class>
@@ -67,6 +68,15 @@
   <servlet-mapping>
     <servlet-name>logout</servlet-name>
     <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>chat-page</servlet-name>
+    <servlet-class>pages.ChatPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>chat-page</servlet-name>
+    <url-pattern>/messenger</url-pattern>
   </servlet-mapping>
   
   <servlet>

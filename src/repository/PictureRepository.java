@@ -11,15 +11,15 @@ import dto.Picture;
 import utils.DateUtil;
 
 public class PictureRepository {
-	
-	private PictureRepository () {
+
+	private PictureRepository() {
 	}
-	
+
 	public static PictureRepository getInstance() {
 		return new PictureRepository();
 	}
-	
-	private Picture toPicture(ResultSet rs){
+
+	private Picture toPicture(ResultSet rs) {
 		Picture picture = new Picture();
 		try {
 			picture.setId(rs.getInt("id"));
@@ -30,49 +30,55 @@ public class PictureRepository {
 		}
 		return picture;
 	}
-	
-	public ArrayList<Picture> getPostPictures (int postid) {
+
+	public ArrayList<Picture> getPostPictures(int postid) {
 		ArrayList<Picture> list = new ArrayList<>();
 		try (Connection connection = DatabaseConnection.initializeDatabase();
-			PreparedStatement ps = connection.prepareStatement("SELECT * FROM post_pictures WHERE postid='"+postid+"'");
-			ResultSet rs = ps.executeQuery();){
-			while(rs.next()) list.add(toPicture(rs));
+				PreparedStatement ps = connection
+						.prepareStatement("SELECT * FROM post_pictures WHERE postid='" + postid + "'");
+				ResultSet rs = ps.executeQuery();) {
+			while (rs.next())
+				list.add(toPicture(rs));
 		} catch (SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return list;
 	}
-	
+
 	public void addPicture(Picture picture, int postId) {
-		try(Connection connection = DatabaseConnection.initializeDatabase();
-			PreparedStatement ps = connection.prepareStatement("INSERT INTO post_pictures ( postId, url, created ) VALUES ( '"+postId+"', '"+picture.getUrl()+"','"+DateUtil.getCurrentSqlDate()+"' );");){
+		try (Connection connection = DatabaseConnection.initializeDatabase();
+				PreparedStatement ps = connection
+						.prepareStatement("INSERT INTO post_pictures ( postId, url, created ) VALUES ( '" + postId
+								+ "', '" + picture.getUrl() + "','" + DateUtil.getCurrentSqlDate() + "' );");) {
 			ps.execute();
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-	public void deletePostPictures (int postid) {
-		try(Connection connection = DatabaseConnection.initializeDatabase();
-			PreparedStatement ps = connection.prepareStatement("DELETE FROM post_pictures WHERE postid='"+postid+"'");){
+
+	public void deletePostPictures(int postid) {
+		try (Connection connection = DatabaseConnection.initializeDatabase();
+				PreparedStatement ps = connection
+						.prepareStatement("DELETE FROM post_pictures WHERE postid='" + postid + "'");) {
 			ps.execute();
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-	public void deletePicture (int id) {
-		try(Connection connection = DatabaseConnection.initializeDatabase();
-			PreparedStatement ps = connection.prepareStatement("DELETE FROM post_pictures WHERE id='"+id+"'");){
+
+	public void deletePicture(int id) {
+		try (Connection connection = DatabaseConnection.initializeDatabase();
+				PreparedStatement ps = connection
+						.prepareStatement("DELETE FROM post_pictures WHERE id='" + id + "'");) {
 			ps.execute();
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 }
