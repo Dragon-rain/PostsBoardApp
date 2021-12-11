@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Chat</title>
         <style media="screen" type="text/css">
         .chat {
                 width: 100%;
@@ -34,9 +34,9 @@
 	        console.log("Error ", event)
 	    } 
 	    function sendMsg() {
-	    	var user = '@Request.RequestContext.HttpContext.Session["user"]';
+	    	var user = document.getElementById("username").value;
 	    	console.log(user);
-	        var msg = document.getElementById("msg").value;
+	        var msg = user+": "+document.getElementById("msg").value;
 	        if(msg)
 	        {
 	            ws.send(msg);
@@ -45,10 +45,13 @@
 	    }
 	</script>
     <body>
-        <h1>Live Chat updates</h1>
+        <h1>Live Chat</h1>
 		<div>
+		
+		
 		    <div id="chat" class="chat"></div>
 		    <div>
+		    <input id="username" value="${user.username}" hidden="true">
 			<input type="text" name="msg" id="msg" placeholder="Enter message here"/>
 		        <button onclick="return sendMsg();">Enter</button>
 		    </div>
