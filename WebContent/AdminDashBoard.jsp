@@ -11,6 +11,7 @@
 	<div>
 		<a href='/ProjectTest1'> Main page </a>
 		<a href='/ProjectTest1/posts'> Posts Board </a>
+		<a href='/ProjectTest1/chat-page'> Chat room </a>
 	</div>
 	<h1>hello ${user.username}</h1>
 	<span>Administrator dash board</span>

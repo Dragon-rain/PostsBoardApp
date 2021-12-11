@@ -10,6 +10,7 @@
 	<div>
 		<a href='/ProjectTest1'> Main page </a>
 		<a href='/ProjectTest1/posts'> Posts Board </a>
+		<a href='/ProjectTest1/chat-page'> Chat room </a>
 	</div>
 	<h1 id="title" >안녕하세요!</h1>
 		<h3>Login</h3>

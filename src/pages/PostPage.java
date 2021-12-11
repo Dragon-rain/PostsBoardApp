@@ -18,7 +18,7 @@ import service.PostServiceImpl;
 @WebServlet("/PostPage")
 public class PostPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	PostService postService;
+	private PostService postService;
 
 	/**
 	 * @see HttpServlet#HttpServlet()

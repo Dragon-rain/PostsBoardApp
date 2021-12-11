@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import userAuthentification.AdminPageInterceptor;
+import userAuthentification.AuthenticationInterceptor;
 
 /**
  * Servlet implementation class AdminDashBoard
@@ -16,12 +17,14 @@ import userAuthentification.AdminPageInterceptor;
 @WebServlet("/AdminDashBoard")
 public class AdminDashBoard extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private AdminPageInterceptor interceptor;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
 	public AdminDashBoard() {
 		super();
+		interceptor = new AdminPageInterceptor();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -31,8 +34,7 @@ public class AdminDashBoard extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		AdminPageInterceptor adminPageInterceptor = new AdminPageInterceptor();
-		adminPageInterceptor.withAdminAuthFilter(request, response);
+		interceptor.withAdminAuthFilter(request, response);
 
 		request.getRequestDispatcher("AdminDashBoard.jsp").include(request, response);
 

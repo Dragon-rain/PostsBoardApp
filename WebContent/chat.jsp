@@ -35,7 +35,6 @@
 	    } 
 	    function sendMsg() {
 	    	var user = document.getElementById("username").value;
-	    	console.log(user);
 	        var msg = user+": "+document.getElementById("msg").value;
 	        if(msg)
 	        {
@@ -45,10 +44,13 @@
 	    }
 	</script>
     <body>
-        <h1>Live Chat</h1>
 		<div>
-		
-		
+			<a href='/ProjectTest1'> Main page </a>
+			<a href='/ProjectTest1/posts'> Posts Board </a>
+			<a href='/ProjectTest1/chat-page'> Chat room </a>
+		</div>
+        <h1>Chat room</h1>
+		<div>
 		    <div id="chat" class="chat"></div>
 		    <div>
 		    <input id="username" value="${user.username}" hidden="true">

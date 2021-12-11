@@ -16,15 +16,16 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * 
 	 */
+	private LoginHandler handler;
 	private static final long serialVersionUID = 1L;
 
 	public LoginServlet() {
 		super();
+		handler = new LoginHandler();
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		LoginHandler handler = new LoginHandler();
 		if (handler.doLogin(req)) {
 			resp.sendRedirect("/ProjectTest1/posts");
 		} else {

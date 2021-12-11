@@ -11,6 +11,7 @@
 	<div>
 		<a href='/ProjectTest1'> Main page </a>
 		<a href='/ProjectTest1/posts'> Posts Board </a>
+		<a href='/ProjectTest1/chat-page'> Chat room </a>
 	</div>
 	<h1>게시판</h1>
 	<c:if test="${user!='null' && user.role=='ADMIN'}">

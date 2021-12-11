@@ -76,7 +76,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>chat-page</servlet-name>
-    <url-pattern>/messenger</url-pattern>
+    <url-pattern>/chat-page</url-pattern>
   </servlet-mapping>
   
   <servlet>

@@ -25,12 +25,13 @@ import userAuthentification.AuthenticationInterceptor;
 )
 public class AddPost extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private AuthenticationInterceptor interceptor;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
 	public AddPost() {
 		super();
+		interceptor = new AuthenticationInterceptor();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -40,7 +41,6 @@ public class AddPost extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		AuthenticationInterceptor interceptor = new AuthenticationInterceptor();
 		interceptor.withAuthFilter(request, response);
 		request.getRequestDispatcher("addPost.html").include(request, response);
 
